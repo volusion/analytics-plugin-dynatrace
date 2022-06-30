@@ -1,5 +1,5 @@
 {
-  "name": "analytics-plugin-dynatrace",
+  "name": "@volusion/analytics-plugin-dynatrace",
   "version": "1.0.0",
   "description": "Plugin to add Dynatrace support to the Analytics npm library",
   "main": "dist/index.js",

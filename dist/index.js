@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const myWindow = window;
 // dynatrace API: https://www.dynatrace.com/support/doc/javascriptapi/interfaces/dtrum_types.DtrumApi.html
-const dynatraceAnalytics = (pluginConfig) => {
+export const dynatraceAnalytics = (pluginConfig) => {
     return {
         name: "analytics-plugin-dynatrace",
         config: {
@@ -49,4 +47,4 @@ const dynatraceAnalytics = (pluginConfig) => {
         },
     };
 };
-exports.default = dynatraceAnalytics;
+export default dynatraceAnalytics;

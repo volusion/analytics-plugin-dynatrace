@@ -11,7 +11,7 @@ export interface DynatracePlugin {
         reportError: (error: string | Error) => void;
     };
 }
-declare const dynatraceAnalytics: (pluginConfig: PluginConfig) => {
+export declare const dynatraceAnalytics: (pluginConfig: PluginConfig) => {
     name: string;
     config: {
         src: string;

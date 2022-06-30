@@ -19,7 +19,7 @@ export interface DynatracePlugin {
 const myWindow: MyWindow = window as MyWindow & typeof globalThis;
 
 // dynatrace API: https://www.dynatrace.com/support/doc/javascriptapi/interfaces/dtrum_types.DtrumApi.html
-const dynatraceAnalytics = (pluginConfig: PluginConfig) => {
+export const dynatraceAnalytics = (pluginConfig: PluginConfig) => {
     return {
         name: "analytics-plugin-dynatrace",
         config: {

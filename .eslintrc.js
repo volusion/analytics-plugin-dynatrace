@@ -4,13 +4,7 @@ module.exports = {
       "@volusion/eslint-config/typescript",
   ],
   rules: {
-      // Not worth the effort to add JSDoc to this whole codebase
       "jsdoc/require-jsdoc": "off",
-      // "no-underscore-dangle": "warn",
-      // "max-classes-per-file": "off",
-      // "import/no-default-export": "warn",
-      // There's a lot of polymorphism in this codebase
-      "class-methods-use-this": "off",
       "import/extensions": [
           "error",
           "never",
@@ -41,7 +35,6 @@ module.exports = {
               ],
           },
       ],
-      // "prettier/prettier": process.env.LINT_PRETTIER ? "error" : "off",
   },
   overrides: [
       {

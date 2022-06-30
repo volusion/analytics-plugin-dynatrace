@@ -25,4 +25,4 @@ export declare const dynatraceAnalytics: (pluginConfig: PluginConfig) => {
         reportError(error: string | Error): void;
     };
 };
-export default dynatraceAnalytics;
+export {};

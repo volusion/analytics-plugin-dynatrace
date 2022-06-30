@@ -6,7 +6,7 @@ pageTitle: Dynatrace
 
 # Dynatrace
 
-This library exports the `dynatraceAnalytics` plugin for the [`analytics`](https://www.npmjs.com/package/analytics) package & standalone methods for any project to use to make it easier to interact with [ActiveCampaign](https://www.activecampaign.com/).
+This library exports the `dynatraceAnalytics` plugin for the [`analytics`](https://www.npmjs.com/package/analytics) package & standalone methods for any project to use to make it easier to interact with [Dynatrace](https://www.dynatrace.com/).
 
 This analytics plugin will load Dynatrace into your application, if you have not already loaded it via a `<script>`.
 

@@ -1,0 +1,37 @@
+name: PR Title Adheres to Commit Spec
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+
+concurrency:
+  group: pr_title_${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-pr-title:
+    if: ${{ github.actor != 'dependabot[bot]'}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/install
+        with:
+            jf_artifactory_user_name: ${{ secrets.JF_ARTIFACTORY_USER_NAME }}
+            jf_artifactory_api_key: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
+      - name: Check title
+        run: echo "${{github.event.pull_request.title}}" | npm run test-commit
+      - name: Comment on PR
+        if: always()
+        run: |
+          if [ "${{job.status}}" = "failure" ]
+          then
+            gh pr comment ${{github.event.number}} --body "PR title must adhere to conventional commit standard. Please see [here](https://github.com/Volusion2Dev/zero-SiteDesigner#commit-guidelines) for questions. Thanks! 🎉"
+          fi
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

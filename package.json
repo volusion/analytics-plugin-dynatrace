@@ -6,7 +6,8 @@
   "scripts": {
     "lint:base": "LINT_PRETTIER=1 eslint",
     "lint": "npm run lint:base -- 'src/**/*.{ts,tsx,js,jsx}'",
-    "test-commit": "commitlint"
+    "test-commit": "commitlint",
+    "build": "npx tsc -d"
   },
   "repository": {
     "type": "git",

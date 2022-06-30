@@ -65,5 +65,3 @@ export const dynatraceAnalytics = (pluginConfig: PluginConfig) => {
         },
     };
 };
-
-export default dynatraceAnalytics;

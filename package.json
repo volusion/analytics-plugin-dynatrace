@@ -4,7 +4,8 @@
   "description": "Plugin to add Dynatrace support to the Analytics npm library",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:base": "LINT_PRETTIER=1 eslint",
+    "lint": "npm run lint:base -- 'src/**/*.{ts,tsx,js,jsx}'"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,15 @@
   },
   "homepage": "https://github.com/volusion/analytics-plugin-dynatrace#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "@volusion/eslint-config": "^1.1.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "prettier": "2.7.1",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {

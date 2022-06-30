@@ -20,17 +20,17 @@ npm install @volusion/analytics-plugin-dynatrace
 ## How to use
 
 ```typescript
-import Analytics from 'analytics'
+import Analytics from "analytics";
 import { dynatraceAnalytics } from "@volusion/analytics-plugin-dynatrace";
 
 const analytics = Analytics({
-  app: 'your-app',
-  plugins: [
-    dynatraceAnalytics({
-      src: 'https://js-cdn.dynatrace.com/jstag/...' // required
-    })
-  ]
-})
+    app: "your-app",
+    plugins: [
+        dynatraceAnalytics({
+            src: "https://js-cdn.dynatrace.com/jstag/...", // required
+        }),
+    ],
+});
 ```
 
 Get the src for your dynatrace script from your Dynatrace account.

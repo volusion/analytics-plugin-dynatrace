@@ -47,3 +47,7 @@ This library only supports the [DtrumApi](https://www.dynatrace.com/support/doc/
 * Make your changes
 * Ensure commit follows our guidelines, [see here](#commit-guidelines)
 * Open PR against `main`
+
+## Commit Guidelines
+
+We enforce standard commit messages on pull requests to `main` based on the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) specification. Commits must be structured in the format `type: commit message`. Common types include `feat:`, `chore:`, and `fix:`.

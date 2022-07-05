@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ "${{job.status}}" = "failure" ]
           then
-            gh pr comment ${{github.event.number}} --body "PR title must adhere to conventional commit standard. Please see [here](https://github.com/Volusion2Dev/zero-SiteDesigner#commit-guidelines) for questions. Thanks! 🎉"
+            gh pr comment ${{github.event.number}} --body "PR title must adhere to conventional commit standard. Please see [here](https://github.com/volusion/analytics-plugin-dynatrace#commit-guidelines) for questions. Thanks! 🎉"
           fi
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

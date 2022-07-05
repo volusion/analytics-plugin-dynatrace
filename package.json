@@ -1,0 +1,46 @@
+{
+  "name": "@volusion/analytics-plugin-dynatrace",
+  "version": "1.0.0",
+  "description": "Plugin to add Dynatrace support to the Analytics npm library",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volusion/analytics-plugin-dynatrace.git"
+  },
+  "keywords": [
+    "analytics",
+    "dynatrace",
+    "analytics-plugin"
+  ],
+  "author": "Volusion, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volusion/analytics-plugin-dynatrace/issues"
+  },
+  "homepage": "https://github.com/volusion/analytics-plugin-dynatrace#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "@volusion/eslint-config": "^1.1.0",
+    "commitlint": "^17.0.3",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "prettier": "2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "analytics": "^0.8.1"
+  },
+  "scripts": {
+    "lint:base": "LINT_PRETTIER=1 eslint",
+    "lint": "npm run lint:base -- 'src/**/*.{ts,tsx,js,jsx}'",
+    "test-commit": "commitlint",
+    "build": "npx tsc -d",
+    "test": "echo \"No test specified\""
+  }
+}

@@ -1,14 +1,8 @@
 {
   "name": "@volusion/analytics-plugin-dynatrace",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Plugin to add Dynatrace support to the Analytics npm library",
   "main": "dist/index.js",
-  "scripts": {
-    "lint:base": "LINT_PRETTIER=1 eslint",
-    "lint": "npm run lint:base -- 'src/**/*.{ts,tsx,js,jsx}'",
-    "test-commit": "commitlint",
-    "build": "npx tsc -d"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/volusion/analytics-plugin-dynatrace.git"
@@ -41,5 +35,12 @@
   },
   "peerDependencies": {
     "analytics": "^0.8.1"
+  },
+  "scripts": {
+    "lint:base": "LINT_PRETTIER=1 eslint",
+    "lint": "npm run lint:base -- 'src/**/*.{ts,tsx,js,jsx}'",
+    "test-commit": "commitlint",
+    "build": "npx tsc -d",
+    "test": "echo \"No test specified\""
   }
 }

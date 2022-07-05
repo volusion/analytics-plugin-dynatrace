@@ -1,27 +1,5 @@
 name: "Install Dependencies"
 description: "Installs Node and npm dependencies"
-# inputs:
-#     jf_artifactory_user_name:
-#         description: "JFrog Artifactory user name"
-#         required: true
-#     jf_artifactory_api_key:
-#         description: "JFrog Artifactory API key"
-#         required: true
-# runs:
-#     using: "composite"
-#     steps:
-#         - name: Use Node.js
-#           uses: actions/setup-node@v2
-#           with:
-#               node-version: "16.14.2"
-#               cache: npm
-#         - name: "Authenticate with Artifactory"
-#           shell: bash
-#           run: |
-#               npm config set registry https://volusion.jfrog.io/artifactory/api/npm/npm/
-#               curl -u ${{ inputs.jf_artifactory_user_name }}:${{ inputs.jf_artifactory_api_key }} https://volusion.jfrog.io/artifactory/api/npm/auth >> ~/.npmrc
-#         - run: npm ci
-#           shell: bash
 runs:
     steps:
         - uses: actions/checkout@v3

@@ -2,7 +2,7 @@ name: "Install Dependencies"
 description: "Installs Node and npm dependencies"
 runs:
     steps:
-        # - uses: actions/checkout@v3
+        - uses: actions/checkout@v3
         - name: Use Node.js 16.14.2
           uses: actions/setup-node@v3
           with:

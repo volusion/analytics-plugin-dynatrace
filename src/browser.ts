@@ -16,7 +16,7 @@ export interface DynatracePlugin {
     };
 }
 
-const DtrumWindow: DtrumWindow = window as DtrumWindow & typeof globalThis;
+const dtrumWindow: DtrumWindow = window as DtrumWindow & typeof globalThis;
 
 // dynatrace API: https://www.dynatrace.com/support/doc/javascriptapi/interfaces/dtrum_types.DtrumApi.html
 export const browserAnalytics = (pluginConfig: PluginConfig) => {
@@ -26,7 +26,7 @@ export const browserAnalytics = (pluginConfig: PluginConfig) => {
             ...pluginConfig,
         },
         initialize: ({ config }: { config: PluginConfig }) => {
-            const win = DtrumWindow;
+            const win = dtrumWindow;
             const root = win.document;
             const loadScript = () => {
                 const s = root.createElement("script");
@@ -51,15 +51,15 @@ export const browserAnalytics = (pluginConfig: PluginConfig) => {
             }
         },
         identify: (config: IdentifyConfig) => {
-            const dynatrace = DtrumWindow.dtrum;
+            const dynatrace = dtrumWindow.dtrum;
             dynatrace.identifyUser(config.payload.userId);
         },
         loaded: () => {
-            return Boolean(DtrumWindow.dtrum);
+            return Boolean(dtrumWindow.dtrum);
         },
         methods: {
             reportError(error: string | Error) {
-                const dynatrace = DtrumWindow.dtrum;
+                const dynatrace = dtrumWindow.dtrum;
                 dynatrace.reportError(error);
             },
         },

@@ -90,10 +90,14 @@ export const browserAnalytics = (pluginConfig: PluginConfig) => {
             };
             const result = dynatrace.setPage(pageToSend);
             if (result === -1) {
-                throw new Error("The page that is being set is the same as previous one.");
+                throw new Error(
+                    "The page that is being set is the same as previous one."
+                );
             }
             if (result === -2) {
-                throw new Error("The page is trying to be set but mechanism is not active. Probably 'dtrum.enableManualPageDetection()' was not called.");
+                throw new Error(
+                    "The page is trying to be set but mechanism is not active. Probably 'dtrum.enableManualPageDetection()' was not called."
+                );
             }
         },
         methods: {

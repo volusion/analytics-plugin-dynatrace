@@ -35,6 +35,32 @@ const analytics = Analytics({
 
 Get the src for your dynatrace script from your Dynatrace account.
 
+### Page tracking
+
+Dynatrace page tracking wants the following data:
+
+```typescript
+{
+    name, // New view name. Usually it matches the location.pathname or location.hash
+    group, // New view group. It is recommended to contain the dynamic placeholders of the view name. For example, if the view name is "/books/123", view group should be "books/:bookId" or similar.
+}
+```
+
+You will need to translate your paths into groups in your application before calling page tracking, something like this:
+
+```typescript
+// this is the simplest possible version
+// it converts "/thing/123" to "/thing/:thingid"
+const groupFromPath = (path: string) => {
+    return path.replace(/\/thing\/\d+/, "/thing/:thingid");
+};
+
+analytics.page({
+    name: location.pathname,
+    group: groupFromPath(location.pathname),
+});
+```
+
 ## Development
 
 compile using `npx tsc -d -w`

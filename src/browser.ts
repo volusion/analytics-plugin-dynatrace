@@ -15,6 +15,28 @@ export interface DynatracePlugin {
         reportError: (error: string | Error) => void;
     };
 }
+export interface Properties {
+    group: string;
+    hash: string;
+    height: number;
+    path: string;
+    referrer: string;
+    search: string;
+    title: string;
+    url: string;
+    width: number;
+}
+export interface Payload {
+    anonymousId: string;
+    properties: Properties;
+    type: "page";
+    userId: string;
+}
+export interface PageConfig {
+    payload: Payload;
+    config: any;
+    instance: any;
+}
 
 const dtrumWindow: DtrumWindow = window as DtrumWindow & typeof globalThis;
 
@@ -56,6 +78,27 @@ export const browserAnalytics = (pluginConfig: PluginConfig) => {
         },
         loaded: () => {
             return Boolean(dtrumWindow.dtrum);
+        },
+        page: (page: PageConfig) => {
+            const { payload } = page;
+            const dynatrace = dtrumWindow.dtrum;
+            dynatrace.enableManualPageDetection();
+
+            const pageToSend = {
+                name: payload.properties.path,
+                group: payload.properties.group,
+            };
+            const result = dynatrace.setPage(pageToSend);
+            if (result === -1) {
+                console.log(
+                    `🚨 analytics-plugin-dynatrace says: "The page that is being set is the same as previous one."`
+                );
+            }
+            if (result === -2) {
+                console.log(
+                    `🚨 analytics-plugin-dynatrace says: "The page is trying to be set but mechanism is not active. Probably 'dtrum.enableManualPageDetection()' was not called."`
+                );
+            }
         },
         methods: {
             reportError(error: string | Error) {
